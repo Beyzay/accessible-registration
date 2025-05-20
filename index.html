@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible User Registration Form</title>
+</head>
+<body>
+    <!-- 3. Add Form Elements:
+     Add the 
+     various input fields, 
+     labels, and 
+     accessibility features. --> 
+
+    <form action="#" method="POST">
+        <h1>Welcome</h1>
+        <h3>Registration Form</h3>
+        <br>
+        
+        <fieldset>
+            <legend>Contact Info</legend>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError"></span>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <br>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <label><input type="radio" name="gender" value="female" required>Female</label>
+            <br>
+            <label><input type="radio" name="gender" value="male" required>Male</label>
+            <br>
+            <label><input type="radio" name="gender" value="other" required>Other</label>
+            <br>
+            <label><input type="radio" name="gender" value="pnts" required>Prefer not to say</label>
+        </fieldset>
+        <br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <label><input type="checkbox" name="terms" required>I agree to the Terms and Conditions</label>
+        <br>
+        
+        <label><input type="checkbox" name="privacy" required>I agree to the Privacy Policy</label>
+        <br>
+        <br>
+
+        <button type="submit" id="submitButton">Register</button>
+    </form>
+</body>
+</html>
+   <!-- 4. Optional Extension Activity:
+     Implement basic JavaScript 
+     to validate form input 
+     and display user-friendly error messages. --> 
+     
+<script>
+    let name = document.getElementById("name");
+    let nameError = document.getElementById("nameError");
+
+    let submitButton = document.getElementById("submitButton");
+    submitButton.onclick = function() {
+        if(!name.value){
+        nameError.innerHTML = "<br> Please enter your full name!";
+        nameError.style.color = "red"
+        }
+    };
+</script>
